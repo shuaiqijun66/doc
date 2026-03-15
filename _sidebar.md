@@ -1,4 +1,0 @@
-- 笔记
-  - [Redhat Linux](/Redhat_Linux/)
-  - [HCIE DateCom](/HCIE_DateCom/)
-  - [Python Basic](/Python_Basic/)

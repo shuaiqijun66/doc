@@ -3,7 +3,7 @@
   - [Redhat Linux](/Documents/Redhat_Linux/)
   - [HCIE DateCom](/Documents/HCIE_DateCom/)
   - [Python Basic](/Documents/Python_Basic/)
-- 语言
+- Language
   - [中文](/)
   - [En](/EN/)
   

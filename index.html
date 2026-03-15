@@ -7,11 +7,12 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-back-top/dist/docsify-back-top.css">
   <link rel="stylesheet" href="custom.css">
 </head>
 <body>
   <div id="app"></div>
+  <button id="back-to-top" title="回到顶部">↑</button>
+
   <script>
     window.$docsify = {
       name: '',
@@ -51,45 +52,9 @@
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-back-top/dist/docsify-back-top.min.js"></script>
     <!-- 添加一个小脚本，确保搜索图标容器稳定 -->
-  <script>
-    // 这个脚本会在 docsify 加载后执行，确保搜索框结构稳定
-    (function() {
-      // 等待 DOM 加载完成
-      document.addEventListener('DOMContentLoaded', function() {
-        // 使用 MutationObserver 监听侧边栏变化，确保搜索框结构正确
-        const observer = new MutationObserver(function(mutations) {
-          const sidebar = document.querySelector('.sidebar');
-          if (!sidebar) return;
-          
-          const search = sidebar.querySelector('.search');
-          if (!search) return;
-          
-          // 检查是否已经有我们的包装器
-          if (!search.querySelector('.search-wrap')) {
-            // 获取输入框
-            const input = search.querySelector('input[type="search"]');
-            if (input && input.parentNode) {
-              // 创建包装器
-              const wrap = document.createElement('div');
-              wrap.className = 'search-wrap';
-              
-              // 将输入框包装起来
-              input.parentNode.insertBefore(wrap, input);
-              wrap.appendChild(input);
-            }
-          }
-        });
-        
-        // 开始观察
-        observer.observe(document.body, {
-          childList: true,
-          subtree: true
-        });
-      });
-    })();
-  </script>
+  <script src="/JS/search.js"></script>
+  <script src="/JS/back_to_top.js"></script>
 </body>
 <style>
 
