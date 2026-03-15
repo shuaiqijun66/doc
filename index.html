@@ -38,7 +38,11 @@
             // 搜索插件配置 (支持详细参数)
       search: {
         maxAge: 86400000,             // 缓存一天
-        paths: 'auto',                // 自动索引
+        paths: [
+        '/',
+        '/Documents/',
+        '/Documents/HCIE_DateCom',
+      ],               // 索引
         placeholder: '搜索文档...',    // 占位符文字
         noData: '没有结果',
         depth: 5,
