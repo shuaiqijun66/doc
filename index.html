@@ -7,6 +7,7 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-back-top/dist/docsify-back-top.css">
   <link rel="stylesheet" href="custom.css">
 </head>
 <body>
@@ -15,6 +16,7 @@
     window.$docsify = {
       name: '',
       repo: '',
+      routerMode: 'history',  // 开启历史模式，去掉 # 号
       loadSidebar: true, // 侧边栏
       loadNavbar: true, // 导航
       externalLinkTarget: '_blank', // 新页面打开超链接
@@ -49,6 +51,7 @@
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-back-top/dist/docsify-back-top.min.js"></script>
     <!-- 添加一个小脚本，确保搜索图标容器稳定 -->
   <script>
     // 这个脚本会在 docsify 加载后执行，确保搜索框结构稳定
