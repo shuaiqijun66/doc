@@ -1,0 +1,160 @@
+/* custom.css */
+
+/* 阴影容器 */
+.shadow-box {
+  background-color: #f6f8fa;
+  border-radius: 6px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+/* 可选：玻璃效果版本（如果使用） */
+.shadow-box-glass {
+  background-color: rgba(246, 248, 250, 0.8);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 16px 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+/* 如果为类别定义了类，也可以放在这里 */
+.category-linux { color: #e06c75; font-weight: bold; }
+.category-db   { color: #61afef; font-weight: bold; }
+.category-cloud { color: #98c379; font-weight: bold; }
+.category-hcie-com { color: #c678dd; font-weight: bold; }
+.category-hcie-sec { color: #d19a66; font-weight: bold; }
+.category-video { color: #56b6c2; font-weight: bold; }
+
+/* 如果需要调整列表项间距等，也可以加入 */
+.shadow-box p {
+  margin: 8px 0;
+}
+
+/* 主题切换按钮定位 */
+.docsify-darklight-theme-toggle {
+  position: fixed !important;
+  top: 16px !important;        /* 与导航栏顶部对齐 */
+  right: 160px !important;     /* 调整此值使按钮位于语言菜单左侧（语言菜单通常在右侧约80px位置） */
+  z-index: 999 !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.3rem !important;
+  transition: all 0.2s ease !important;
+}
+
+/* 悬停效果 */
+.docsify-darklight-theme-toggle:hover {
+  transform: scale(1.1) !important;
+  background: rgba(128, 128, 128, 0.1) !important;
+}
+
+/* 暗色模式下按钮颜色微调 */
+.dark .docsify-darklight-theme-toggle {
+  color: #ffd700 !important;  /* 暗色下为金色 */
+}
+/* 覆盖 docsify 默认搜索容器 */
+    .sidebar .search {
+      position: relative;
+      margin: 10px 0 15px 0;
+      padding: 0 3px;           /* 与侧边栏内边距一致 */
+      display: block;
+      border: none !important;   /* 移除任何默认边框 */
+    }
+    
+    /* 创建一个包装器来稳定包含图标和输入框 */
+    .sidebar .search .search-wrap {
+      position: relative;
+      display: block;
+      width: 100%;
+    }
+    
+    /* 使用绝对定位的图标，相对于 .search-wrap 定位 */
+    .sidebar .search .search-wrap:before {
+      content: "🔍";
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      color: #7f8c8d;
+      z-index: 10;               /* 提高层级 */
+      pointer-events: none;
+      line-height: 1;             /* 确保垂直居中稳定 */
+    }
+    
+    /* 输入框样式 - 直接定位 docsify 生成的 input */
+    .sidebar .search input[type="search"] {
+      border: 2px solid #eaeceb !important;
+      border-radius: 30px !important;
+      padding: 10px 16px 10px 42px !important;
+      width: 100% !important;
+      font-size: 1rem !important;
+      background-color: #ffffff !important;
+      transition: box-shadow 0.2s, border-color 0.2s !important;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+      height: auto !important;     /* 覆盖默认高度 */
+      line-height: normal !important;
+      box-sizing: border-box !important;
+      margin: 0 !important;
+      position: relative !important;
+      z-index: 5 !important;
+    }
+    
+    /* 输入框聚焦效果 */
+    .sidebar .search input[type="search"]:focus {
+      border-color: #2c8f66 !important;
+      outline: none !important;
+      box-shadow: 0 2px 12px rgba(66, 185, 131, 0.2) !important;
+    }
+    
+    /* 搜索结果容器 - 确保不影响图标位置 */
+    .sidebar .search .search-results {
+      margin: 8px 0 0 0 !important;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 20;
+      background: white;
+    }
+    
+    /* 夜间模式适配 */
+    .dark .sidebar .search input[type="search"] {
+      background-color: #2d2f31 !important;
+      border-color: #5f9ea0 !important;
+      color: #eee !important;
+    }
+    .dark .sidebar .search .search-wrap:before {
+      color: #bbb;
+    }
+    .dark .sidebar .search .search-results {
+      background: #2d2f31;
+      border-color: #444;
+    }
+    
+    /* 修复 docsify 默认搜索插件的额外元素 */
+    .sidebar .search .search-input {
+      padding: 0 !important;
+      border: none !important;
+      background: transparent !important;
+    }
+    
+    /* 确保图标容器始终存在且稳定 */
+    .sidebar .search .input-wrap {
+      position: relative;
+      display: block;
+    }
+    
+    /* 使用 JavaScript 动态修复（作为后备方案） */
+ 
